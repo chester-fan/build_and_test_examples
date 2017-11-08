@@ -6,3 +6,10 @@ jdk:
 
 before_install:
   - cd java
+
+notifications:
+  email:
+    recipients:
+     - chester.fan@vertivco.com
+    on_success: change
+    on_failure: always
