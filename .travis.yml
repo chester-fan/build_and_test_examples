@@ -16,9 +16,16 @@ before_install:
 script:
   - make test
 
+#NOTE: Pull Request builds do not trigger email notifications.
 notifications:
   email:
     recipients:
      - chester.fan@vertivco.com
     on_success: always
     on_failure: always
+
+#if normal build, ${TRAVIS_PULL_REQUEST} = false
+#if pull request, ${TRAVIS_PULL_REQUEST} = pull request's number
+
+#- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && ABC || XYZ'
+
